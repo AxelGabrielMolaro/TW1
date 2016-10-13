@@ -18,7 +18,7 @@ public class EquipoServiceImpl implements EquipoService {
 	public Equipo e1=new Equipo("alte");
 	
 	public EquipoServiceImpl() {
-		//modificando clase con interfaz
+		//modificando clase con interfaz asdasd
 	}
 	
 	@Override
