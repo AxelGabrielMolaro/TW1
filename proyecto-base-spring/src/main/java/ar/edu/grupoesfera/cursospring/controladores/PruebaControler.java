@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PruebaControler {
 
-	@RequestMapping("/ppcualquiercosaa1")
+	@RequestMapping("/pruebagit")
 	public ModelAndView p1()
 	{
 		ModelMap mp=new ModelMap();
