@@ -7,44 +7,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-
-
-
-
-
-<title>Insert title here</title>
-
-
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	    <link href="css/bootstrap.min.css" rel="stylesheet" >
+	    <title>Jugadores dados de alta</title>
 </head>
-
-
 <body>
-
-<div class="col-md-12">
-	<a href="agregarJugador"><input type="button" value="agregar Jugador"></a>
-	<a href="modificarJugador"><input type="button" value="modificar Jugador"></a>
-</div>
-	<table class="table-responsive col-md-offset-3 col-md-6">
-	<tr>
-		<th>Nombre<th>Apellido<th>Documento
-	</tr>
-		<c:forEach var="listValue" items="${listaDeJugadores}">
-			<tr>
-			
-				<td>${listValue.getNombre()}<td>${listValue.getApellido()}<td>${listValue.getDocumento()}
-				<td><a href="${listValue.getDocumento()}"><input type=button class="btn "  value="Eliminar"></a>
-				<td>
-			<tr>
-							
-		</c:forEach>
+<jsp:include page="header.jsp" />
+<div class="container-fluid">
 	
-	
-	</table>
-	
+		<table class="table-responsive col-md-offset-3 col-md-6">
+		<tr>
+			<th>Nombre<th>Apellido<th>Documento
+		</tr>
+			<c:forEach var="listValue" items="${listaDeJugadores}">
+				<tr>
+					<td>${listValue.getNombre()}<td>${listValue.getApellido()}<td>${listValue.getDocumento()}
+					<td><a href="${listValue.getDocumento()}"><input type=button class="btn btn-xs btn btn-danger "  value="Eliminar"></a><br><br>
+					</td>
+				<tr>	
+			</c:forEach>
+		</table>	
+		<div class="col-md-6 col-md-offset-3 text-center">
+			<a href="agregarJugador"><input class="col-center btn btn-sm btn-success" type="button" value="Agregar Jugador"></a><br><br>
+			<a href="modificarJugador"><input class="col-center btn btn-sm btn-warning" type="button" value="Modificar Jugador"></a>
+		</div>
+	</div>
 </body>
 </html>
