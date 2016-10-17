@@ -24,6 +24,16 @@ public class ABMJugador {
 	@Inject
 	private EquipoService equipoService;
 	
+	//equipo vacio
+	@RequestMapping(value="/equipo")
+	public ModelAndView obtenerUnaListDeJug()
+	{
+		
+			ModelMap modelEquipoVacio=new ModelMap();
+			return new ModelAndView("equipo",modelEquipoVacio);
+
+		
+	}
 	
 	//agregar Jugador
 	@RequestMapping("/agregarJugador")

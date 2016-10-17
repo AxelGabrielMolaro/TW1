@@ -17,40 +17,29 @@ public class EquipoServiceImpl implements EquipoService {
 	//lo agregre pq no hay bdd
 	public Equipo e1=new Equipo("alte");
 	
+	//public Equipo e1; ver
+	
+	@Inject 
+	public TorneoService torneoService;
+	
 	public EquipoServiceImpl() {
 		
+	}
+	
+	//agrego a que equipo le agrego
+	
+	public void seleccionarEquipoATrabajar(String nombre) throws Exception
+	{
+		this.e1=torneoService.buscarUnEquipoDeterminado(nombre);
 	}
 	
 	@Override
 	public void agregarJugador(String nombre,String apellido,Integer documento) throws Exception
 	{
 		Jugador jugadorAAgregrar=new Jugador(nombre, apellido, documento);
-		//valido nombre
-		if(jugadorAAgregrar.getNombre()=="")
-		{
-			throw new Exception("no haz introducido nombre");
-		}
-		else if( jugadorAAgregrar.getNombre().length()<2 || jugadorAAgregrar.getNombre().length()>25)
-		{
-			throw new Exception("rango de caranteres no validos en nombre");
-		}
-		//valido apellido
-		else if(jugadorAAgregrar.getApellido()=="")
-		{
-			throw new Exception("no haz introducido apellido");
-		}
-		else if( jugadorAAgregrar.getApellido().length()<2 || jugadorAAgregrar.getNombre().length()>25)
-		{
-			throw new Exception("rango de caranteres no validos en apellido");
-		}	
-		//si el doc es distinto de 8
-		else if(jugadorAAgregrar.getDocumento().toString().length()!=8)
-		{
-			throw new Exception("el documento debe tener 8 caracteres");
-		}
-		//siguiente validacion, que no se repita
-		else
-		{
+		
+		
+
 			if(e1.getListaDeJugadores().contains(jugadorAAgregrar))
 			{
 				throw new Exception("El jugador que quieres agregar ya existe");
@@ -60,7 +49,7 @@ public class EquipoServiceImpl implements EquipoService {
 			{
 				e1.getListaDeJugadores().add(new Jugador(nombre, apellido, documento));
 			}
-		}
+		
 		
 	}
 
