@@ -8,16 +8,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="css/campoOculto.css" rel="styleSheet" type="text/Css">
-<title>Insert title here</title>
+<title>Modificar jugador</title>
 </head>
 <body>
-	<form:form method="POST" action="modificarJugador3" modelAttribute="jugador">
+<jsp:include page="header.jsp" />
+
+	<div class="container-fluid">
+	
+		<div class="col-md-6 col-md-offset-3">
+				<form:form method="POST" action="modificarJugador3" modelAttribute="jugador">
+				
+					<div class="form-group">
+						<form:label path="nombre"> Nombre:</form:label>
+						<form:input class="form-control" path="nombre"/>
+					</div>
+					<div class="form-group">
+						<form:label path="apellido"> Apellido:</form:label>
+						<form:input class="form-control" path="apellido"/>
+					</div>
+					
+					 <div class="form-group">
+						<form:input path="documento" class="campoOculto"/>
+					</div> 
+					
+					<input type="submit" class="btn btn-warning" value="Modificar">
+				</form:form>
+		</div>
 		
-		<form:input path="nombre"/>
-		<form:input path="apellido"/>
-		<form:input path="documento" class="campoOculto"/>
-		<input type="submit" value="modificar">
-	</form:form>
+	</div>
+	
 </body>
 </html>

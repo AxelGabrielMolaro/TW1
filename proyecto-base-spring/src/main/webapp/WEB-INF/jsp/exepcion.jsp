@@ -4,13 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>Error!!</title>
 </head>
 <body>
-Error, atencion!
-<br>
-	${exepcion} x.x
+<jsp:include page="header.jsp" />
+<div class="container">
+<div class="alert alert-danger">
+  <strong>Error, atención!!</strong> ${exepcion} 
+</div>
+<a href="javascript:history.back()" class="btn btn-success">Volver atrás</a>
+</div>
 
-<a href="javascript:history.back()">volver atrás</a>
 </body>
 </html>

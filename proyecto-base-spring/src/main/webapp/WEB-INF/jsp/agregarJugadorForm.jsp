@@ -8,19 +8,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>Dar de alta jugador</title>
 </head>
 <body>
-	<form:form action="equipo" modelAttribute="jugador" method="POST">
-		agregar jugador
-		<br>
-		nombre
-		<form:input path="nombre" />
-		apellido
-		<form:input path="apellido" />
-		documento
-		<form:input path="documento" />
-		<input type="submit" value="agregar">
-	</form:form>
+<jsp:include page="header.jsp" />
+	<div class="container-fluid">
+		<div class="col-md-6 col-md-offset-3">
+			<h2 class="text-info text-center">Agregar jugador <small>Ingrese sus datos</small></h2>
+			<form:form action="equipo" modelAttribute="jugador" method="POST">
+				<div class="form-group">			
+					<form:label path="nombre"> Nombre:</form:label>
+					<form:input class="form-control" path="nombre" />
+				</div>
+				<div class="form-group">			
+					<form:label path="apellido"> Apellido:</form:label>
+					<form:input class="form-control" path="apellido" />
+				</div>
+				<div class="form-group">			
+					<form:label path="documento"> Documento:</form:label>
+					<form:input class="form-control" path="documento" />
+				</div>
+				<div class="form-group">			
+					<input class="btn btn-warning" type="submit" value="Agregar">
+				</div>
+		</form:form>
+		</div>
+		
+	</div>
+	
 </body>
 </html>
